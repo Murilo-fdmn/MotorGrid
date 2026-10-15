@@ -8,7 +8,7 @@ public class Principal {
             "Rua das Flores",
             "100",
             "Centro",
-            "Videira.",
+            "Videira",
             "SC",
             "89560-000"
         );
