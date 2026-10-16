@@ -1,5 +1,5 @@
-package concessionaria;
 
+package concessionaria;
 
 public class Funcionario extends Pessoa {
 
@@ -31,6 +31,12 @@ public class Funcionario extends Pessoa {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-}
 
-  
+    @Override
+    public String apresentarDados() {
+        return "FUNCIONARIO | "
+                + super.apresentarDados()
+                + " | Cargo: " + cargo
+                + " | Salario: R$ " + salario;
+    }
+}

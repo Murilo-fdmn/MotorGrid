@@ -1,3 +1,4 @@
+
 package concessionaria;
 
 public class Cliente extends Pessoa {
@@ -20,5 +21,11 @@ public class Cliente extends Pessoa {
     public void setEmail(String email) {
         this.email = email;
     }
-}
 
+    @Override
+    public String apresentarDados() {
+        return "CLIENTE | "
+                + super.apresentarDados()
+                + " | Email: " + email;
+    }
+}

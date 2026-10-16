@@ -48,5 +48,10 @@ public class Pessoa {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-}
 
+    public String apresentarDados() {
+        return "Nome: " + nome
+                + " | CPF: " + cpf
+                + " | Telefone: " + telefone;
+    }
+}

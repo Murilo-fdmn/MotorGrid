@@ -1,3 +1,4 @@
+
 package concessionaria;
 
 import java.util.ArrayList;
@@ -10,11 +11,13 @@ public class Estoque {
         produtos = new ArrayList<Produto>();
     }
 
+    // CREATE - cadastrar produto
     public void inserir(Produto produto) {
         produtos.add(produto);
         System.out.println("Produto cadastrado com sucesso!");
     }
 
+    // READ - buscar pelo ID
     public Produto buscar(int id) {
         for (Produto produto : produtos) {
             if (produto.getId() == id) {
@@ -25,6 +28,18 @@ public class Estoque {
         return null;
     }
 
+    // READ - buscar pelo modelo (sobrecarga)
+    public Produto buscar(String modelo) {
+        for (Produto produto : produtos) {
+            if (produto.getModelo().equalsIgnoreCase(modelo)) {
+                return produto;
+            }
+        }
+
+        return null;
+    }
+
+    // UPDATE - atualizar produto
     public boolean atualizar(int id, Produto novoProduto) {
         for (int i = 0; i < produtos.size(); i++) {
             if (produtos.get(i).getId() == id) {
@@ -38,6 +53,7 @@ public class Estoque {
         return false;
     }
 
+    // DELETE - remover produto
     public boolean remover(int id) {
         Produto produto = buscar(id);
 
@@ -51,6 +67,7 @@ public class Estoque {
         return false;
     }
 
+    // Listar todos os produtos
     public void listar() {
         if (produtos.isEmpty()) {
             System.out.println("Estoque vazio.");
@@ -59,14 +76,12 @@ public class Estoque {
 
         for (Produto produto : produtos) {
             System.out.println(
-                "ID: " + produto.getId()
-                + " | Marca: " + produto.getMarca()
-                + " | Modelo: " + produto.getModelo()
-                + " | Ano: " + produto.getAno()
-                + " | Preco: R$ " + produto.getPreco()
+                    "ID: " + produto.getId()
+                    + " | Marca: " + produto.getMarca()
+                    + " | Modelo: " + produto.getModelo()
+                    + " | Ano: " + produto.getAno()
+                    + " | Preco: R$ " + produto.getPreco()
             );
         }
     }
 }
-
-   
